@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "168169254784",
+    "firebase_url": "https://vkc-vendor.firebaseio.com",
+    "project_id": "vkc-vendor",
+    "storage_bucket": "vkc-vendor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168169254784:android:ebdc70756bfa220d",
+        "android_client_info": {
+          "package_name": "com.eleganzit.vkcvendor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168169254784-ohtqqv38lp3h1bvqjspecs2v56dmvdae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZvMv4QxFWfiDwvNbrgvazjEMYqmQ4UZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168169254784-ohtqqv38lp3h1bvqjspecs2v56dmvdae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
