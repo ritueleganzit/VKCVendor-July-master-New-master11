@@ -27,7 +27,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
-        project.ext.set("archivesBaseName", "VKCVendor-29-07-2019")
+        project.ext.set("archivesBaseName", "VKCVendor-30-07-2019")
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -59,9 +59,8 @@ dependencies {
     implementation 'com.github.Kunzisoft:Android-SwitchDateTimePicker:2.0'
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'me.philio:pinentryview:1.1.0-SNAPSHOT'
-    implementation 'com.google.firebase:firebase-core:9.2.0'
-    implementation 'com.google.firebase:firebase-auth:9.2.0'
-    implementation 'com.google.firebase:firebase-messaging:9.2.0'
+    implementation 'com.google.firebase:firebase-messaging:17.+'
+
 
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

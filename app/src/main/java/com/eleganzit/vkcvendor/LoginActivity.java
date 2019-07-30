@@ -25,7 +25,9 @@ import com.eleganzit.vkcvendor.model.Vendor;
 import com.eleganzit.vkcvendor.util.DateUtils;
 import com.eleganzit.vkcvendor.util.MyService;
 import com.eleganzit.vkcvendor.util.UserLoggedInSession;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -76,7 +78,14 @@ public class LoginActivity extends AppCompatActivity {
                         Thread t=new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                Token= FirebaseInstanceId.getInstance().getToken();
+                                FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener( LoginActivity.this,  new OnSuccessListener<InstanceIdResult>() {
+                                    @Override
+                                    public void onSuccess(InstanceIdResult instanceIdResult) {
+                                        Token = instanceIdResult.getToken();
+                                        device_token=Token;
+                                        Log.e("get token",Token);
+                                    }
+                                });
                                 if (Token!=null)
                                 {
                                     Log.d("mytokenn", Token);
@@ -215,7 +224,14 @@ public class LoginActivity extends AppCompatActivity {
         Thread t=new Thread(new Runnable() {
             @Override
             public void run() {
-                Token= FirebaseInstanceId.getInstance().getToken();
+                FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener( LoginActivity.this,  new OnSuccessListener<InstanceIdResult>() {
+                    @Override
+                    public void onSuccess(InstanceIdResult instanceIdResult) {
+                        Token = instanceIdResult.getToken();
+                        device_token=Token;
+                        Log.e("get token",Token);
+                    }
+                });
                 if (Token!=null)
                 {
                     Log.d("mytokenn", Token);

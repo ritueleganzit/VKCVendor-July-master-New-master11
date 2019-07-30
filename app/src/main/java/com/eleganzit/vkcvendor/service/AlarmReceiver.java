@@ -271,11 +271,11 @@ public final class AlarmReceiver extends BroadcastReceiver {
 
         void schedule(Alarm alarm, PendingIntent pi) {
             if(SDK_INT > LOLLIPOP) {
-                am.setAlarmClock(new AlarmClockInfo(alarm.getTime(), launchAlarmLandingPage(ctx, alarm)), pi);
+                am.setInexactRepeating(AlarmManager.RTC_WAKEUP, alarm.getTime(),AlarmManager.INTERVAL_DAY, pi);
             } else if(SDK_INT > KITKAT) {
-                am.setExact(AlarmManager.RTC_WAKEUP, alarm.getTime(), pi);
+                am.setInexactRepeating(AlarmManager.RTC_WAKEUP, alarm.getTime(),AlarmManager.INTERVAL_DAY, pi);
             } else {
-                am.set(AlarmManager.RTC_WAKEUP, alarm.getTime(), pi);
+                am.setRepeating(AlarmManager.RTC_WAKEUP, alarm.getTime(),AlarmManager.INTERVAL_DAY, pi);
             }
         }
 
