@@ -168,12 +168,12 @@ public final class Alarm implements Parcelable{
 
         final SparseBooleanArray array = new SparseBooleanArray(numDays);
 
-        array.put(MON, false);
-        array.put(TUES, false);
-        array.put(WED, false);
-        array.put(THURS, false);
-        array.put(FRI, false);
-        array.put(SAT, false);
+        array.put(MON, true);
+        array.put(TUES, true);
+        array.put(WED, true);
+        array.put(THURS, true);
+        array.put(FRI, true);
+        array.put(SAT, true);
         array.put(SUN, false);
 
         return array;
