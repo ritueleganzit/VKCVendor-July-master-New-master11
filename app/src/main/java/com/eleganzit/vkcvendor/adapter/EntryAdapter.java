@@ -54,7 +54,7 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.MyViewHolder
         final PNumber pNumber = campaigns.get(i);
         holder.ptxtnumber.setText(pNumber.getPurDocNum());
         holder.vendor_name.setText(vendor_name);
-        if (i == 0) {
+       // if (i == 0) {
             holder.txtRegister.setBackgroundColor(Color.parseColor("#2B9E30"));
             holder.cardviewsuccess.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -70,12 +70,12 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.MyViewHolder
                     activity.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
             });
-        } else {
-            holder.txtRegister.setBackgroundColor(Color.parseColor("#88683e"));
+     //   } else {
+          // holder.txtRegister.setBackgroundColor(Color.parseColor("#88683e"));
 
-            holder.frame.setBackgroundColor(context.getResources().getColor(R.color.transparent));
+          //  holder.frame.setBackgroundColor(context.getResources().getColor(R.color.transparent));
 
-        }
+      //  }
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         holder.rc_art.setLayoutManager(layoutManager);
         holder.rc_art.setAdapter(new ArticleAdapter(pNumber.getArticledata(), context));

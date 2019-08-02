@@ -59,6 +59,8 @@ public class OreoNotification extends ContextWrapper {
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(getNotificationIcon ())
                 .setTicker("VKC")
+                .setStyle(new Notification.BigTextStyle().bigText(body))
+
                 .setNumber(10)
                 .setContentTitle(title)
                 .setContentText(body)

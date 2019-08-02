@@ -70,6 +70,7 @@ int row_index=-1;
         final PNumber pNumber=campaigns.get(i);
         Log.d(campaigns.size()+"bbbbbbb",""+nocount.size());
 
+/*
 
         if (pNumber.getMapping().equalsIgnoreCase("yes")) {
             row_index=i;
@@ -89,7 +90,8 @@ int row_index=-1;
                 holder.frame.setBackgroundColor(context.getResources().getColor(R.color.transparent));
 
             }
-            /*for (int j = 0; j < campaigns.size(); j++) {
+            */
+/*for (int j = 0; j < campaigns.size(); j++) {
 
 
                 if (campaigns.get(j).getMapping().equalsIgnoreCase("yes")) {
@@ -104,9 +106,11 @@ int row_index=-1;
                     holder.frame.setBackgroundColor(Color.TRANSPARENT);
 
                 }
-            }*/
+            }*//*
+
 
         }
+*/
 
 
         holder.mark_as_complete.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +127,7 @@ int row_index=-1;
             @Override
             public void onClick(View v) {
                 boolean data=true;
-                if (pNumber.getMapping().equalsIgnoreCase("yes")) {
+               /* if (pNumber.getMapping().equalsIgnoreCase("yes")) {
                     context.startActivity(new Intent(context, AssignToLineActivity.class).putExtra("pur_doc_num",""+pNumber.getPurDocNum()));
                     activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
@@ -131,10 +135,10 @@ int row_index=-1;
                 {
 
                     if (nocount.size()==campaigns.size()) {
-                        context.startActivity(new Intent(context, AssignToLineActivity.class).putExtra("pur_doc_num",""+pNumber.getPurDocNum()));
+                  */      context.startActivity(new Intent(context, AssignToLineActivity.class).putExtra("pur_doc_num",""+pNumber.getPurDocNum()));
                         activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                    }
+                 //   }
                        /* for (int i=0;i<campaigns.size();i++) {
                         if (campaigns.get(i).getMapping().equalsIgnoreCase("yes")) {
 data=true;
@@ -150,7 +154,7 @@ break;
                         activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
                     }*/
-                }
+             //   }
 
             }
         });
@@ -159,17 +163,17 @@ break;
             @Override
             public void onClick(View v) {
                 boolean data=true;
-                if (pNumber.getMapping().equalsIgnoreCase("yes")) {
+               /* if (pNumber.getMapping().equalsIgnoreCase("yes")) {
                     context.startActivity(new Intent(context, AssignToLineActivity.class).putExtra("pur_doc_num",""+pNumber.getPurDocNum()));
                     activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
 
                       else {
-                    if (nocount.size()==campaigns.size()) {
+                    if (nocount.size()==campaigns.size()) {*/
                         context.startActivity(new Intent(context, AssignToLineActivity.class).putExtra("pur_doc_num",""+pNumber.getPurDocNum()));
                         activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                    }
+                   // }
                        /* for (int i = 0; i < campaigns.size(); i++) {
                         if (campaigns.get(i).getMapping().equalsIgnoreCase("yes")) {
                             data=true;
@@ -192,7 +196,7 @@ break;
                     else
                     {
                     }*/
-                }
+              //  }
 
             }
         });
@@ -201,16 +205,16 @@ break;
             @Override
             public void onClick(View v) {
                 boolean data=true;
-                if (pNumber.getMapping().equalsIgnoreCase("yes")) {
+               /* if (pNumber.getMapping().equalsIgnoreCase("yes")) {
                     context.startActivity(new Intent(context, AssignToLineActivity.class).putExtra("pur_doc_num",""+pNumber.getPurDocNum()));
                     activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 }
-                else {
-                    if (nocount.size()==campaigns.size()) {
+                else {*/
+                 //   if (nocount.size()==campaigns.size()) {
                         context.startActivity(new Intent(context, AssignToLineActivity.class).putExtra("pur_doc_num",""+pNumber.getPurDocNum()));
                         activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
-                    }
+                 //   }
 
                       /*  for (int i = 0; i < campaigns.size(); i++) {
                         if (campaigns.get(i).getMapping().equalsIgnoreCase("yes")) {
@@ -227,7 +231,7 @@ data=true;
                         activity.overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
 
                     }*/
-                }
+              //  }
 
             }
         });

@@ -129,6 +129,7 @@ compareDates();
                                 }
 
                             }
+                            Log.d("ggggg",""+arrayList.size());
                             rc_entry.setAdapter(new EntryAdapter(arrayList, getActivity(),userLoggedInSession.getUserDetails().get(UserLoggedInSession.USER_NAME)));
 
                         }
