@@ -245,10 +245,35 @@ public class PlanFragment extends Fragment implements LoadAlarmsReceiver.OnAlarm
             alarm.setDay(Alarm.SAT, true);
             alarm.setDay(Alarm.SUN, false);
 
-            AlarmReceiver.setReminderAlarm(getContext(), alarm, hours[i]);
+            Calendar calendar=Calendar.getInstance();
+            if (calendar.getTimeInMillis()>time.getTimeInMillis())
+            {
+                AlarmReceiver.cancelReminderAlarm(getActivity(), alarm, hours[i]);
+
+            }
+            else
+            {
+                AlarmReceiver.setReminderAlarm(getContext(), alarm, hours[i]);
+
+            }
+
         }
     }
+    private void delete() {
 
+        for(int i=0;i<hours.length;i++) {
+            final Alarm alarm = getAlarm();
+
+            //Cancel any pending notifications for this alarm
+            AlarmReceiver.cancelReminderAlarm(getActivity(), alarm, hours[i]);
+
+            DatabaseHelper.getInstance(getActivity()).deleteAll();
+
+        }
+
+        // Toast.makeText(HomeActivity.this, "Alarms cancelled", Toast.LENGTH_SHORT).show();
+        LoadAlarmsService.launchLoadAlarmsService(getActivity());
+    }
     @Override
     public void onStart() {
         super.onStart();

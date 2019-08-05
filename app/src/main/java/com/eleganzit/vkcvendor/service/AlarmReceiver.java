@@ -86,33 +86,50 @@ public final class AlarmReceiver extends BroadcastReceiver {
             return;
         }
 
-        final int id = alarm.notificationId();
 
-        final NotificationManager manager =
-                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-
-        createNotificationChannel(context);
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
-        builder.setSmallIcon(R.mipmap.ic_alarm);
-        builder.setColor(ContextCompat.getColor(context, R.color.colorAccent));
-        builder.setContentTitle(context.getString(R.string.app_name));
-        builder.setContentText("Hourly Reminder");
-        builder.setTicker(alarm.getLabel());
-        builder.setVibrate(new long[] {1000,500,1000,500,1000,500});
-        builder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
-        builder.setContentIntent(launchAlarmLandingPage(context, alarm));
-        builder.setAutoCancel(true);
-        builder.setPriority(Notification.PRIORITY_HIGH);
-
-        manager.notify(id, builder.build());
 
         //playSound(context, getAlarmUri());
+        Calendar c = Calendar.getInstance();
+        int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+        if(dayOfWeek != Calendar.SUNDAY) {
+            final int id = alarm.notificationId();
 
-        Intent i = new Intent(context, ReminderActivity.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(i);
+            final NotificationManager manager =
+                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+            createNotificationChannel(context);
+
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
+            builder.setSmallIcon(R.mipmap.ic_alarm);
+            builder.setColor(ContextCompat.getColor(context, R.color.colorAccent));
+            builder.setContentTitle(context.getString(R.string.app_name));
+            builder.setContentText("Hourly Reminder");
+            builder.setTicker(alarm.getLabel());
+            builder.setVibrate(new long[] {1000,500,1000,500,1000,500});
+            builder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+            builder.setContentIntent(launchAlarmLandingPage(context, alarm));
+            builder.setAutoCancel(true);
+            builder.setPriority(Notification.PRIORITY_HIGH);
+
+            manager.notify(0, builder.build());
+
+            Intent i = new Intent(context, ReminderActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(i);
+
+            Log.d("itsssunday","No");
+
+        }
+        else
+        {
+
+            Log.d("itsssunday","yes");
+        }
+
+
+
+
 
 
         //Reset Alarm manually
