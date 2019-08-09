@@ -246,16 +246,16 @@ public class PlanFragment extends Fragment implements LoadAlarmsReceiver.OnAlarm
             alarm.setDay(Alarm.SUN, false);
 
             Calendar calendar=Calendar.getInstance();
-            if (calendar.getTimeInMillis()>time.getTimeInMillis())
+           /* if (calendar.getTimeInMillis()>time.getTimeInMillis())
             {
                 AlarmReceiver.cancelReminderAlarm(getActivity(), alarm, hours[i]);
 
             }
             else
-            {
+            {*/
                 AlarmReceiver.setReminderAlarm(getContext(), alarm, hours[i]);
 
-            }
+         //  }
 
         }
     }
